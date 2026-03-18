@@ -1,3 +1,2 @@
 # process-portfolio
-Process Portfolio for go runners
-start！！
+Process Portfolio for RunBuddy
