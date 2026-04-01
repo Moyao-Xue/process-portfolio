@@ -56,65 +56,275 @@
   </div>
 
   <div class="sky">
-    <!-- 中央欢迎文字 -->
     <div class="sky-center-text">Welcome to Our Little Town</div>
   </div>
 
-  <!-- 第三场景：星露谷（保留结构 + 可滚动 + 清空内容 + 纯色底部） -->
-<div class="final-scene">
-  <header class="d-flex justify-between align-center w-100">
-    <!-- <img class="logo-icon" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/logo.png" alt="logo">
-    <img class="menu-icon" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/menu.png" alt="menu icon"> -->
-    <nav class="dropdown-nav closed">
-      <a href="#hero">
-        <img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/home-icon.png" alt="home-icon">
-        Home
-      </a>
-    </nav>
-  </header>
-
-  <main>
-    <!-- 保留：Hero 村庄 -->
-    <div class="hero-bg">
-      <div class="bg-1a"></div>
-      <div class="bg-1b"></div>
-      <div class="bg-2a"></div>
-      <div class="bg-2b"></div>
-    </div>
-    <section id="hero">
-      <div class="page-title">GO BUDDY</div>
-      <img class="hero-img" src="image/road.png" alt="flat image">
-    </section>
-
-    <!-- 保留结构 清空内容 -->
-    <section id="locations"></section>
-    <section class="border"></section>
-    <section id="map"></section>
-    <section id="villagers"></section>
-    <section id="contact"></section>
-
-    <!-- 保留：底部纯色框（原版样式） -->
-    <footer id="footerStyle" class="d-flex flex-wrap flex-col justify-center align-center">
-      <div class="d-flex justify-center align-center" style="gap:20px;">
-        <img class="title" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/title.png" alt="title">
-        <img class="logo-gif" src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/ca_logo.gif" alt="concernedape logo">
-      </div>
-      <div class="d-flex flex-wrap flex-col justify-center align-center">
-        <div class="d-flex mb-20">
-          <a target="_blank" href="https://twitter.com/concernedape"><img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/twitter.png" alt="twitter"></a>
-          <a target="_blank" href="https://www.facebook.com/StardewValley"><img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/facebook.png" alt="facebook"></a>
-          <a target="_blank" href="https://www.reddit.com/r/StardewValley/"><img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/reddit.png" alt="reddit"></a>
-          <a target="_blank" href="https://www.stardewvalley.net/contact/"><img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/email.png" alt="mail"></a>
-          <a target="_blank" href="https://discordapp.com/invite/StardewValley"><img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/discord.png" alt="discord"></a>
-        </div>
+  <!-- 第三场景：星露谷（最终场景） -->
+  <div class="final-scene">
+    <header class="d-flex justify-between align-center w-100">
+      <nav class="dropdown-nav closed">
         <a href="#hero">
-          <img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/up.png" alt="back to top">
+          <img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/home-icon.png" alt="home-icon">
+          Home
         </a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero-bg"></div>
+      <section id="hero">
+        <div class="page-title">Go! Buddy</div>
+        <img class="hero-img" src="image/road.png" alt="flat image">
+        <div class="bg-mask"></div>
+      </section>
+
+      <!-- ========== PORTFOLIO CONTENT ========== -->
+      <div class="portfolio-pixel">
+        <!-- 你原来的超长 portfolio 内容 直接放这里 -->
+        <!-- （你原来那一大段不用动，我已经帮你归位） -->
+        <div class="pixel-header">
+          <h1>🎽 RUNBUDDY · Process Portfolio</h1>
+          <p>✦ Companion-based Gamified Running Buddy ✦ Beginner-friendly · Community Co-creation ✦</p>
+        </div>
+
+        <section id="motivation-research" class="portfolio-section pixel-card">
+          <h2 class="pixel-title">Motivation &amp; Research</h2>
+          <div class="pixel-subtitle">The Why · Motivation statement (~200 words)</div>
+          <div class="why-text">
+            We chose the "Active Lifestyles" direction because we've witnessed too many beginners being deterred from running—due to boredom, loneliness, and lack of positive feedback. Existing apps overemphasize competitive data while neglecting emotional support and habit formation for beginners.<br><br>
+            RunBuddy creates a <strong>cartoon running companion</strong> that transforms running from a "task" to an "anticipation" through companionship mechanisms, lightweight gamification, and safe running volume recommendations. We integrate narrative growth, costume collection, and local route unlocking into the product, responding to the concept of inclusive sports. This design directly addresses real pain points: beginners need encouragement, not pressure. Based on Self-Determination Theory (SDT), RunBuddy enhances autonomy, competence, and relational connection to help users establish sustainable active lifestyles.
+          </div>
+
+          <div class="pixel-subtitle" style="margin-top: 1.5rem;">The Gap · Four academic papers &amp; four commercial products (each: 3 done well · 3 missed)</div>
+          <div class="gap-grid">
+            <div class="paper-item"><strong>📄 Run Together (Şahin & Şener)</strong><br>
+              <span class="badge-good">✅ Strengths: Mixed methods/Social motivation/SDT analysis</span><br>
+              <span class="badge-miss">❌ Gaps: Lack of offline scenarios / Insufficient core gamification</span>
+            </div>
+            <div class="paper-item"><strong>📄 Just a Fad? Gamification (2014)</strong><br>
+              <span class="badge-good">✅ Strengths: COM-B model/In-depth narrative advocacy</span><br>
+              <span class="badge-miss">❌ Gaps: Outdated cases/No runner-specific validation</span>
+            </div>
+            <div class="paper-item"><strong>📄 Persuasive Technology (Fritz et al.)</strong><br>
+              <span class="badge-good">✅ Strengths: Long-term tracking/"Data contract" concept</span><br>
+              <span class="badge-miss">❌ Gaps: Superficial social gamification analysis / No systematic solutions</span>
+            </div>
+            <div class="paper-item"><strong>📄 Smartphone games & BCTs</strong><br>
+              <span class="badge-good">✅ Strengths: BCTs mapping / mySugr case study</span><br>
+              <span class="badge-miss">❌ Gaps: Lack of outdoor group scenarios</span>
+            </div>
+          </div>
+          <div class="gap-grid">
+            <div class="product-item"><strong>🏅 Sigma (Joyrun competitor)</strong><br>✅ Ad-free/Beijing Sport University AI guidance/Campus social features<br>❌ Lack of advanced training/Underdeveloped community/GPS drift</div>
+            <div class="product-item"><strong>🏅 Joyrun</strong><br>✅ Active running groups/Online events/3D track<br>❌ Excessive ads/Location errors/Heart rate lag</div>
+            <div class="product-item"><strong>🏅 Keep</strong><br>✅ Structured courses/Hardware ecosystem/IP medals<br>❌ Data retention only 30 days/AI coach offline/Weak check-in incentives</div>
+            <div class="product-item"><strong>🏅 Huawei Health</strong><br>✅ High market share/Accurate health monitoring/Multi-device sync<br>❌ Poor cross-brand experience/Cluttered UI/Redundant features</div>
+          </div>
+          <p style="margin-top: 12px; font-size:0.85rem;"><strong>🎯 Key Findings：</strong> Existing products generally lack "deep gamification narrative", neglect emotional companionship for beginners and safe running volume guidance; social functions focus on competition rather than lightweight encouragement. RunBuddy will fill the gap of "companionship + moderate rewards + localized routes + injury prevention mechanisms".</p>
+
+          <div class="pixel-subtitle" style="margin-top: 1.5rem;">The Stakeholders · Primary &amp; secondary users (personas)</div>
+          <div class="persona-row">
+            <div class="persona-card">
+              <h3 style="color:#b4652c;">🌟 Emily · Beginner (Primary User)</h3>
+              <p>21 years old, XJTLU student who wants to lose weight and relieve stress through running but has never persisted. Owns an Apple Watch but is intimidated by professional data. Likes cute things and costume collection.</p>
+              <p><strong>Goals：</strong> Form habits with low threshold, gain companionship and positive feedback, avoid sports injuries.<br>
+              <strong>Needs：</strong> Minimalist interface, real-time encouragement from cartoon companion, calories exchanged for costumes, safe route prompts, non-competitive data display.</p>
+            </div>
+            <div class="persona-card">
+              <h3 style="color:#b4652c;">🏃 Mike · Senior Organizer (Secondary User)</h3>
+              <p>33 years old, manager of a Suzhou running group (600 members), uses Garmin watch and is annoyed by Joyrun ads. Hopes to efficiently manage the community and help beginners integrate.</p>
+              <p><strong>Goals：</strong> Professional data tracking + group event functions, create inclusive challenges, share experience ad-free.<br>
+              <strong>Needs：</strong> Event management tools, team challenges, professional device compatibility, bulletin board light social features.</p>
+            </div>
+          </div>
+          <p style="margin-top: 8px;"><em>Product Impact: Emily drives cute companionship and simple guidance; Mike drives community events and professional compatibility, forming a mutually supportive ecosystem.</em></p>
+        </section>
+
+        <section id="user-requirements" class="portfolio-section pixel-card">
+          <h2 class="pixel-title">User Requirements</h2>
+          <div class="pixel-subtitle">User journey map · Pain points of target users</div>
+          <div class="pixel-subtitle">User journey map</div>
+          <div style="text-align: center; margin: 1.5rem 0;">
+            <img src="image/userjourneymap.png" alt="User Journey Map" style="max-width: 100%; height: auto; border-radius: 16px; border: 4px solid #d4a373; box-shadow: 6px 6px 0 rgba(0,0,0,0.15);">
+          </div>
+          <div class="journey-pixel">
+            📍 ① Having the idea to run → 😣 Fear of loneliness / Not knowing how to start<br>
+            📍 ② Opening the App → 😫 Complex data / Competitive pressure<br>
+            📍 ③ During running → 😐 Boredom / Difficulty persisting<br>
+            📍 ④ After finishing → 😕 Lack of positive feedback / Easy to give up<br>
+            🎯 <strong>RunBuddy Intervention：</strong> 🎮 Companion support + 🎁 Collection surprises + 📢 Community encouragement + 🛡️ Safe running volume reminders
+          </div>
+          
+          <div class="requirements-list" style="margin: 1.5rem 0;">
+            <strong>Requirements list · Three must-haves for a &ldquo;playful&rdquo; system</strong>
+            <ul style="margin-top: 12px; margin-left: 20px;">
+              <li><strong>1. Real-time Companion Motivation System</strong> — Virtual companion provides voice/text encouragement during running, rewards stars and interactive easter eggs for each kilometer completed, eliminating loneliness.</li>
+              <li><strong>2. Gamified Costumes & Growth</strong> — Exchange calories burned through safe running for tokens to unlock companion costumes, accessories and local route maps, visualizing exercise achievements.</li>
+              <li><strong>3. Lightweight Community Bulletin Board + Beginner-friendly Challenges</strong> — Users can post updates, like and comment; support team check-in challenges (low-intensity format), with experienced runners guiding beginners to form a supportive atmosphere.</li>
+            </ul>
+          </div>
+
+          <div class="pixel-subtitle">Evidence of life · 5 photos</div>
+          <div class="evidence-grid">
+            <div class="evidence-item" style="width: auto; height: auto; padding: 8px;">
+              <img src="image/evidenceoflife1.png" alt="Evidence of Life 1" style="width: 100%; max-width: 180px; height: 120px; object-fit: cover; border-radius: 10px; border: 3px solid #b48c48;">
+            </div>
+            <div class="evidence-item" style="width: auto; height: auto; padding: 8px;">
+              <img src="image/evidenceoflife2.png" alt="Evidence of Life 2" style="width: 100%; max-width: 180px; height: 120px; object-fit: cover; border-radius: 10px; border: 3px solid #b48c48;">
+            </div>
+            <div class="evidence-item" style="width: auto; height: auto; padding: 8px;">
+              <img src="image/evidenceoflife3.png" alt="Evidence of Life 3" style="width: 100%; max-width: 180px; height: 120px; object-fit: cover; border-radius: 10px; border: 3px solid #b48c48;">
+            </div>
+            <div class="evidence-item" style="width: auto; height: auto; padding: 8px;">
+              <img src="image/evidenceoflife4.png" alt="Evidence of Life 4" style="width: 100%; max-width: 180px; height: 120px; object-fit: cover; border-radius: 10px; border: 3px solid #b48c48;">
+            </div>
+            <div class="evidence-item" style="width: auto; height: auto; padding: 8px;">
+              <img src="image/evidenceoflife5.png" alt="Evidence of Life 5" style="width: 100%; max-width: 180px; height: 120px; object-fit: cover; border-radius: 10px; border: 3px solid #b48c48;">
+            </div>
+          </div>
+        </section>
+
+        <section id="ideation-alternatives" class="portfolio-section pixel-card">
+          <h2 class="pixel-title">Ideation &amp; Alternatives</h2>
+          <div class="pixel-subtitle">Crazy Eights · 8 rapid hand-drawn UI sketches</div>
+          <div class="sketch-row">
+            <div style="text-align: center;">
+              <img src="image/crazyeights1.jpg" alt="Crazy Eight 1" style="width: 100%; max-width: 140px; height: 100px; object-fit: cover; border-radius: 10px; border: 3px solid #aa7e44; box-shadow: 3px 3px 0 #9b6e3e;">
+              <p style="font-family: monospace; font-size: 0.7rem; margin-top: 4px;">1</p>
+            </div>
+            <div style="text-align: center;">
+              <img src="image/crazyeights2.jpg" alt="Crazy Eight 2" style="width: 100%; max-width: 140px; height: 100px; object-fit: cover; border-radius: 10px; border: 3px solid #aa7e44; box-shadow: 3px 3px 0 #9b6e3e;">
+              <p style="font-family: monospace; font-size: 0.7rem; margin-top: 4px;">2</p>
+            </div>
+            <div style="text-align: center;">
+              <img src="image/crazyeights3.jpg" alt="Crazy Eight 3" style="width: 100%; max-width: 140px; height: 100px; object-fit: cover; border-radius: 10px; border: 3px solid #aa7e44; box-shadow: 3px 3px 0 #9b6e3e;">
+              <p style="font-family: monospace; font-size: 0.7rem; margin-top: 4px;">3</p>
+            </div>
+            <div style="text-align: center;">
+              <img src="image/crazyeights4.jpg" alt="Crazy Eight 4" style="width: 100%; max-width: 140px; height: 100px; object-fit: cover; border-radius: 10px; border: 3px solid #aa7e44; box-shadow: 3px 3px 0 #9b6e3e;">
+              <p style="font-family: monospace; font-size: 0.7rem; margin-top: 4px;">4</p>
+            </div>
+          </div>
+
+          <div class="pixel-subtitle" style="margin-top: 1.5rem;">Design alternatives · Compare 2&ndash;3 system directions &amp; final choice</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+            <div class="alt-card"><strong>Option A: Pure Data Competitive</strong><br>Emphasizes pace/rankings, similar to traditional sports apps.<br>❌ Disadvantages: High pressure for beginners, lack of emotional stickiness.</div>
+            <div class="alt-card"><strong>Option B: Hardcore Gamified RPG</strong><br>Complex quests, monster battles and leveling up, deviating from the essence of running.<br>❌ Disadvantages: High learning cost, deviation from sports safety.</div>
+            <div class="alt-card" style="background:#f7e5ce;"><strong>✅ Option C: Companion-based Collection + Light Narrative (RunBuddy)</strong><br>✔️ Virtual companion support + safe running volume exchange for costumes + unlock real routes + bulletin board social features.<br>✔️ Integrates "deep gamification" theory with injury prevention mechanisms to protect beginners.</div>
+          </div>
+          <p style="margin-top: 12px;"><strong>Reasons for Selection：</strong> Directly addresses the lack of "deep narrative gamification" in literature, combines Sigma's campus advantages with Joyrun's route fun, fills the frustration caused by excessive competition, and makes running sustainable.</p>
+
+          <div class="pixel-subtitle" style="margin-top: 1rem;">Low-fi prototype · Clickable Figma (add your share link)</div>
+          <button class="btn-pixel" id="figmaPixelBtn">🎨 Expand Low-Fi Prototype Demo</button>
+          <div id="pixelMockup" style="margin-top: 1rem; background:#eadbba; border-radius: 20px; padding: 1.2rem; display: none; border: 2px solid #c99e5b;">
+            <p><strong>📱 RunBuddy Low-Fi Prototype Structure</strong><br>
+            Home Screen: Companion status + Today's mileage; Bottom Navigation: Running/Costumes/Map/Bulletin Board.<br>
+            Core Flow: Companion pops up encouragement during running, earns "Bean Coins" after finishing, exchange costumes in shop, unlock new routes.<br>
+            <span style="background:#fff0cf; display:inline-block; padding:6px; border-radius:12px;">🎧 [Simulated Interface] : 🐶 "Emily, you've jogged for 15 minutes! Collected 3 coins～ You can change the bear's hat after finishing!"</span></p>
+            <p style="font-size:0.8rem;">Paste your Figma URL in the main low-fi link above when ready.</p>
+          </div>
+        </section>
+
+        <section id="technical-implementation" class="portfolio-section pixel-card">
+          <h2 class="pixel-title">Technical Implementation</h2>
+          <h3 class="pixel-subtitle" style="margin-top: 0;">System architecture</h3>
+          <p>Web app data flow: client (browser) &harr; API &harr; database &amp; third-party services (maps, health sync). Replace this box with your diagram image.</p>
+          <div class="arch-placeholder" role="img" aria-label="Architecture diagram placeholder">[Diagram: Web app &middot; API &middot; DB &middot; external APIs]</div>
+          <h3 class="pixel-subtitle">High-fi prototype / hosted build</h3>
+          <p><strong>Live demo:</strong> <a href="https://example.com/runbuddy-demo" style="color:#b4652c; font-weight:700;">https://example.com/runbuddy-demo</a> (replace with your GitHub Pages / Vercel URL)</p>
+          <h3 class="pixel-subtitle">Individual contributions</h3>
+          <table class="contrib-table">
+            <thead>
+              <tr>
+                <th scope="col">Member</th>
+                <th scope="col">Code</th>
+                <th scope="col">UI design</th>
+                <th scope="col">Content</th>
+                <th scope="col">Testing</th>
+                <th scope="col">Other</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Member A</td>
+                <td>Frontend architecture</td>
+                <td>High-fi UI</td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+              </tr>
+              <tr>
+                <td>Member B</td>
+                <td>&mdash;</td>
+                <td>Visual assets</td>
+                <td>Gamification narrative</td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+              </tr>
+              <tr>
+                <td>Member C</td>
+                <td>Backend API</td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+                <td>Database design</td>
+              </tr>
+              <tr>
+                <td>Member D</td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+                <td>Research &amp; writing</td>
+                <td>User testing</td>
+                <td>&mdash;</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top:1rem; font-size:0.9rem;"><strong>Stack notes:</strong> Frontend React + Node.js + MongoDB; Apple HealthKit / Garmin sync; Amap API for local routes; safe running volume reminders.</p>
+        </section>
+        <section id="evaluation-reflection" class="portfolio-section pixel-card">
+          <h2 class="pixel-title">Evaluation &amp; Reflection</h2>
+          <h3 class="pixel-subtitle" style="margin-top: 0;">Usability testing (alpha, 3 participants)</h3>
+          <p>Beginners: companion makes running feel less lonely. Running-group managers: bulletin board direction resonates. Add task times, severity, and quotes from sessions.</p>
+          <h3 class="pixel-subtitle">Iterative refinement</h3>
+          <p>Increased in-run encouragement frequency; simplified costume shop hierarchy; added &ldquo;Safe Running Volume Guardian&rdquo;; reduced rewards when volume is excessive.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:1rem;">
+            <div class="evidence-item" style="width:140px; height:120px;">Before<br>(screenshot)</div>
+            <div class="evidence-item" style="width:140px; height:120px;">After<br>(screenshot)</div>
+          </div>
+          <h3 class="pixel-subtitle">Final reflection</h3>
+          <p><strong>Social / ethical:</strong> Privacy, inclusive language, avoiding shame or toxic competition.</p>
+          <p><strong>AI in the project:</strong> Used for draft encouragement copy and analysis assistance; human review for tone and safety; no sensitive health data in third-party prompts.</p>
+        </section>
+        <footer>🏃‍♂️ RunBuddy · From Research to Prototype | Active Lifestyles Track | 2026 Pixel Style Process Portfolio</footer>
       </div>
-    </footer>
-  </main>
-</div>
-</div>
+
+      <section id="locations"></section>
+      <section id="map"></section>
+      <section id="villagers"></section>
+      <section id="contact"></section>
+
+      <!-- 底部 footer 放在这里！只在最后场景出现 -->
+      <footer id="footerStyle" class="d-flex flex-wrap flex-col justify-center align-center">
+        <div class="d-flex justify-center align-center" style="gap:20px;">
+          <div class="last_title">Go! Buddy</div>
+          <img class="logo-gif" src="image/logo.png" alt="concernedape logo">
+        </div>
+        <div class="d-flex flex-wrap flex-col justify-center align-center">
+          <div class="d-flex mb-20">
+            <a target="_blank" href="https://twitter.com/concernedape"><img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/twitter.png" alt="twitter"></a>
+            <a target="_blank" href="https://www.facebook.com/StardewValley"><img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/facebook.png" alt="facebook"></a>
+            <a target="_blank" href="https://www.reddit.com/r/StardewValley/"><img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/reddit.png" alt="reddit"></a>
+            <a target="_blank" href="https://www.stardewvalley.net/contact/"><img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/email.png" alt="mail"></a>
+            <a target="_blank" href="https://discordapp.com/invite/StardewValley"><img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/discord.png" alt="discord"></a>
+          </div>
+          <a href="#hero">
+            <img src="https://res.cloudinary.com/dqfgwgif9/image/upload/v1645661048/stardew-valley/up.png" alt="back to top">
+          </a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>

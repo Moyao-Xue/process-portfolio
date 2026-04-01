@@ -1,5 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Manrope:wght@400;500;700&display=swap");
 
+@font-face {
+  font-family: 'kids'; /* 自己起名 */
+  src: url('../fonts/ButterflyKids-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'finger'; /* 自己起名 */
+  src: url('../fonts/FingerPaint-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'inter'; /* 自己起名 */
+  src: url('../fonts/Interlope-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'medieval'; /* 自己起名 */
+  src: url('../fonts/MedievalSharp.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'waterfall'; /* 自己起名 */
+  src: url('../fonts/Waterfall-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ZQK'; /* 自己起名 */
+  src: url('../fonts/ZQK_Scribbled.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --bg-color: #d1cfc7;
   --paper-color: #fcfcfb;
@@ -337,8 +378,8 @@ body.fade-to-dark {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: "Cinzel", serif;
-  font-size: 2.8rem;
+  font-family: "ZQK", serif;
+  font-size: 6rem;
   line-height: 1;
   font-weight: 700;
   letter-spacing: -1px;
@@ -483,7 +524,7 @@ header {
     min-height: 700px;
 } */
 .hero-bg {
-  z-index: -1;
+  z-index: -10 !important;
   position: absolute;
   left: 0;
   top: 0;
@@ -553,6 +594,7 @@ header {
 } */
 #hero .hero-img {
     position: absolute;
+    z-index: 2;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -565,9 +607,9 @@ header {
 
 /* 空模块保留结构 */
 #locations, #villagers, #map, .border, #contact {
-    background-color: #eddbad;
-    width: 100vw;
-    height: 100px;
+  background: #eddbad;
+  position: relative;
+  z-index: 1;
 }
 
 /* ========= 底部纯色框（原版样式 100% 还原）========= */
@@ -612,16 +654,251 @@ header {
   top: 50% !important;
   left: 50% !important;
   width: 100% !important;
-  transform: translate(-50%, -70%) !important;
+  transform: translate(-50%, -50%) !important;
 
   text-align: center !important; 
-  font-size: 100px !important;
-  font-family: "Cinzel", serif !important;
+  font-size: 200px !important;
+  font-family: "ZQK", serif !important;
   font-weight: 900 !important;
-  color: #ffffff !important;
-  text-shadow: 0 0 15px rgba(0,0,0,0.8) !important;
+  color: #FFFFFF !important;
+  text-shadow: 
+    2px 2px 0 #333333,
+   -2px 2px 0 #333333,
+    2px -2px 0 #333333,
+   -2px -2px 0 #333333;
   z-index: 99999999 !important;
   pointer-events: none !important;
 }
 
 /* 标题 + GIF 并排 */
+
+/* ========== PORTFOLIO CONTENT - PIXEL STYLE ========== */
+/* ============================== */
+/* PORTFOLIO PIXEL 完整样式  */
+/* ============================== */
+.portfolio-pixel {
+  max-width: 1000px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
+  font-family: 'Kelly Slab', cursive;
+  color: #441600;
+  line-height: 1.6;
+  position: relative !important;
+  z-index: 2 !important;
+}
+.pixel-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.pixel-header h1 {
+  font-size: 2rem;
+  color: #b4652c;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 0 #e4c49c;
+}
+.pixel-header p {
+  font-size: 1rem;
+  color: #7d4c2a;
+}
+
+/* 卡片整体 */
+.portfolio-section {
+  margin-bottom: 50px;
+}
+.pixel-card {
+  background: #fffbeb;
+  border: 4px outset #d57a05;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+}
+.pixel-title {
+  font-size: 1.6rem;
+  color: #b4652c;
+  margin-bottom: 16px;
+  border-bottom: 3px solid #d4a373;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+.pixel-subtitle {
+  font-size: 1.1rem;
+  color: #8b522a;
+  margin: 1.2rem 0 0.6rem;
+  font-weight: bold;
+}
+
+/* 文本 */
+.why-text {
+  background: #f9f0dc;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid #e4c49c;
+}
+
+/* 网格布局 */
+.gap-grid,
+.persona-row,
+.evidence-grid,
+.sketch-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 16px 0;
+}
+.paper-item,
+.product-item,
+.persona-card,
+.alt-card {
+  flex: 1;
+  min-width: 260px;
+  background: #f9f0dc;
+  border: 2px solid #d4a373;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+}
+.persona-card h3 {
+  margin-bottom: 6px;
+}
+
+/* 标签 */
+.badge-good,
+.badge-miss {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin: 2px 0;
+}
+.badge-good {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+.badge-miss {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+/* 图片网格 */
+.evidence-grid,
+.sketch-row {
+  justify-content: center;
+  gap: 12px;
+}
+.evidence-item img,
+.sketch-row img {
+  transition: transform 0.2s ease;
+}
+.evidence-item img:hover,
+.sketch-row img:hover {
+  transform: scale(1.05);
+}
+
+/* 按钮 */
+.btn-pixel {
+  background: #facc15;
+  border: 3px outset #d97706;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-family: 'Kelly Slab', cursive;
+  font-size: 1rem;
+  color: #441600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-pixel:hover {
+  background: #fde047;
+  transform: translateY(-2px);
+}
+
+/* 架构图占位 */
+.arch-placeholder {
+  background: #f3e8c8;
+  border: 2px dashed #d4a373;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 16px 0;
+}
+
+/* 表格 */
+.contrib-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fffbeb;
+  margin: 16px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #d4a373;
+}
+.contrib-table th,
+.contrib-table td {
+  padding: 10px 12px;
+  border: 1px solid #e4c49c;
+  text-align: center;
+}
+.contrib-table th {
+  background: #f9d59b;
+}
+
+/* 底部 */
+.portfolio-pixel footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px;
+  font-size: 0.95rem;
+  color: #8b522a;
+  border-top: 2px solid #d4a373;
+}
+
+/* ============================== */
+/* ✅ 修复三个问题 */
+/* ============================== */
+
+/* 1. 修复门票居中 */
+.exhibition-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* 2. 修复最后场景：恢复纯色背景，关闭动画背景 */
+/* 只修复：让动画背景显示在最上层底部，不被纯色盖住 */
+.bg-mask {
+  position: absolute;
+  top: 80vh;       /* 从 road.png 下面开始 */
+  left: 0;
+  width: 100vw;
+  height: 840vh;   /* 足够长 */
+  background: #eddbad;
+  z-index: 0;      /* 👈 关键：背景之上，内容之下 */
+  pointer-events: none;
+}
+/* 3. 底部 footer 只在最后场景显示，不会跑到第一页 */
+#footerStyle {
+  position: relative;
+  z-index: 10;
+}
+
+.last_title {
+
+  text-align: left !important;  /* 文字左对齐 */
+  font-size: 100px !important;
+  font-family: "ZQK", serif !important;
+  font-weight: 900 !important;
+  color: #FFFFFF !important;
+  text-shadow: 
+    1px 1px 0 #333333,
+   -1px 1px 0 #333333,
+    1px -1px 0 #333333,
+   -1px -1px 0 #333333;
+  z-index: 99999999 !important;
+  pointer-events: none !important;
+}

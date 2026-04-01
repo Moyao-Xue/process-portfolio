@@ -144,13 +144,41 @@ const waitForScene = setInterval(() => {
   }
 }, 500);
 
+
+// ==============================
+// PORTFOLIO PIXEL 交互
+// ==============================
+function initPortfolioPixel() {
+  const figmaBtn = document.getElementById('figmaPixelBtn');
+  const pixelMockup = document.getElementById('pixelMockup');
+
+  if (!figmaBtn || !pixelMockup) return;
+
+  figmaBtn.addEventListener('click', () => {
+    const isOpen = pixelMockup.style.display === 'block';
+    pixelMockup.style.display = isOpen ? 'none' : 'block';
+    figmaBtn.textContent = isOpen
+      ? '🎨 Expand Low-Fi Prototype Demo'
+      : '📦 Close Prototype Demo';
+  });
+}
+
+// 等待 final-scene 显示后启动
+const portfolioInterval = setInterval(() => {
+  const final = document.querySelector('.final-scene.show');
+  if (final) {
+    initPortfolioPixel();
+    clearInterval(portfolioInterval);
+  }
+}, 300);
+
 // =========================================
-// 页面加载后统一初始化
+// 把新功能加到启动列表
 // =========================================
 window.onload = function () {
   updateDate();
   updateTime();
-  setInterval(updateTime, 60000); // 每分钟更新时间
+  setInterval(updateTime, 60000);
   initAutoExit();
-  initClouds(); // ✅ 启动云朵
+  initClouds();
 };
