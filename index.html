@@ -59,6 +59,12 @@
     <div class="sky-center-text">Welcome to Our Little Town</div>
   </div>
 
+  <!-- 左侧滚动进度条 -->
+  <div class="scroll-progress-bar" id="scrollProgressBar">
+    <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    <div class="scroll-progress-tooltip" id="scrollProgressTooltip">0%</div>
+  </div>
+
   <!-- 第三场景：星露谷（最终场景） -->
   <div class="final-scene">
     <header class="d-flex justify-between align-center w-100">
@@ -87,6 +93,15 @@
           <p>✦ Companion-based Gamified Running Buddy ✦ Beginner-friendly · Community Co-creation ✦</p>
         </div>
 
+        <!-- 快速导航栏 -->
+        <nav class="portfolio-nav">
+          <a href="#motivation-research" class="nav-item">Motivation & Research</a>
+          <a href="#user-requirements" class="nav-item">User Requirements</a>
+          <a href="#ideation-alternatives" class="nav-item">Ideation & Alternatives</a>
+          <a href="#technical-implementation" class="nav-item">Technical Implementation</a>
+          <a href="#evaluation-reflection" class="nav-item">Evaluation & Reflection</a>
+        </nav>
+
         <section id="motivation-research" class="portfolio-section pixel-card">
           <h2 class="pixel-title">Motivation &amp; Research</h2>
           <div class="pixel-subtitle">The Why · Motivation statement (~200 words)</div>
@@ -97,23 +112,59 @@
 
           <div class="pixel-subtitle" style="margin-top: 1.5rem;">The Gap · Four academic papers &amp; four commercial products (each: 3 done well · 3 missed)</div>
           <div class="gap-grid">
-            <div class="paper-item"><strong>📄 Run Together (Şahin & Şener)</strong><br>
+            <!-- 卡片：Run Together (Şahin & Şener, 2025) -->
+            <div class="paper-item">
+              <strong>📄 Run Together (Şahin & Şener, 2025)</strong><br>
               <span class="badge-good">✅ Strengths: Mixed methods/Social motivation/SDT analysis</span><br>
               <span class="badge-miss">❌ Gaps: Lack of offline scenarios / Insufficient core gamification</span>
+              <div class="citation-mini">
+                <a href="https://doi.org/10.18848/1832-3669/CGP/v21i02/215-244" target="_blank" rel="noopener">DOI: 10.18848/1832-3669/CGP/v21i02/215-244</a>
+              </div>
             </div>
-            <div class="paper-item"><strong>📄 Just a Fad? Gamification (2014)</strong><br>
+
+            <!-- 卡片：Just a Fad? Gamification (Lister et al., 2014) -->
+            <div class="paper-item">
+              <strong>📄 Just a Fad? Gamification (Lister et al., 2014)</strong><br>
               <span class="badge-good">✅ Strengths: COM-B model/In-depth narrative advocacy</span><br>
               <span class="badge-miss">❌ Gaps: Outdated cases/No runner-specific validation</span>
+              <div class="citation-mini">
+                <a href="https://doi.org/10.2196/games.3413" target="_blank" rel="noopener">DOI: 10.2196/games.3413</a>
+              </div>
             </div>
-            <div class="paper-item"><strong>📄 Persuasive Technology (Fritz et al.)</strong><br>
+
+            <!-- 卡片：Persuasive technology in the real world (Fritz et al., 2014) · CHI '14 -->
+            <div class="paper-item">
+              <strong>📄 Persuasive technology in the real world (Fritz et al., 2014)</strong><br>
               <span class="badge-good">✅ Strengths: Long-term tracking/"Data contract" concept</span><br>
               <span class="badge-miss">❌ Gaps: Superficial social gamification analysis / No systematic solutions</span>
+              <div class="citation-mini">
+                Persuasive technology in the real world: a study of long-term use of activity sensing devices for fitness.<br>
+                Thomas Fritz, Elaine M. Huang, Gail C. Murphy, Thomas Zimmermann · CHI '14: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems · pp. 487–496 · 26 Apr 2014<br>
+                <a href="https://doi.org/10.1145/2556288.2557383" target="_blank" rel="noopener">DOI: 10.1145/2556288.2557383</a>
+              </div>
             </div>
-            <div class="paper-item"><strong>📄 Smartphone games & BCTs</strong><br>
-              <span class="badge-good">✅ Strengths: BCTs mapping / mySugr case study</span><br>
+
+            <!-- 卡片：Smartphone games & BCTs (Edwards et al., 2016) -->
+            <div class="paper-item">
+              <strong>📄 Smartphone games & BCTs (Edwards et al., 2016)</strong><br>
+              <span class="badge-good">✅ Strengths: BCTs mapping / mySugr case study / Systematic review</span><br>
               <span class="badge-miss">❌ Gaps: Lack of outdoor group scenarios</span>
+              <div class="citation-mini">
+                <a href="https://bmjopen.bmj.com/content/6/10/e012447.short" target="_blank" rel="noopener">BMJ Open, 6(10): e012447</a>
+              </div>
+            </div>
+
+            <!-- 卡片：Beginner running programs (Stevinson et al., 2020) -->
+            <div class="paper-item">
+              <strong>📄 Beginner running programs (Stevinson et al., 2020)</strong><br>
+              <span class="badge-good">✅ Strengths: 10-week observational study / Adherence & health outcomes</span><br>
+              <span class="badge-miss">❌ Gaps: No gamification analysis / Lacks tech-intervention focus</span>
+              <div class="citation-mini">
+                <a href="https://hdl.handle.net/2134/12932927" target="_blank" rel="noopener">Permanent Link</a>
+              </div>
             </div>
           </div>
+
           <div class="gap-grid">
             <div class="product-item"><strong>🏅 Sigma (Joyrun competitor)</strong><br>✅ Ad-free/Beijing Sport University AI guidance/Campus social features<br>❌ Lack of advanced training/Underdeveloped community/GPS drift</div>
             <div class="product-item"><strong>🏅 Joyrun</strong><br>✅ Active running groups/Online events/3D track<br>❌ Excessive ads/Location errors/Heart rate lag</div>
@@ -143,16 +194,16 @@
         <section id="user-requirements" class="portfolio-section pixel-card">
           <h2 class="pixel-title">User Requirements</h2>
           <div class="pixel-subtitle">User journey map · Pain points of target users</div>
-          <div class="pixel-subtitle">User journey map</div>
           <div style="text-align: center; margin: 1.5rem 0;">
             <img src="image/userjourneymap.png" alt="User Journey Map" style="max-width: 100%; height: auto; border-radius: 16px; border: 4px solid #d4a373; box-shadow: 6px 6px 0 rgba(0,0,0,0.15);">
           </div>
           <div class="journey-pixel">
-            📍 ① Having the idea to run → 😣 Fear of loneliness / Not knowing how to start<br>
-            📍 ② Opening the App → 😫 Complex data / Competitive pressure<br>
-            📍 ③ During running → 😐 Boredom / Difficulty persisting<br>
-            📍 ④ After finishing → 😕 Lack of positive feedback / Easy to give up<br>
-            🎯 <strong>RunBuddy Intervention：</strong> 🎮 Companion support + 🎁 Collection surprises + 📢 Community encouragement + 🛡️ Safe running volume reminders
+            📍 ① App Onboarding & Companion Setup → 😟 Worried (Overwhelmed by pro running data / Fear of being judged as a beginner)<br>
+            📍 ② First Run Preparation & Start → 😰 Anxious (Uncertainty about safe route selection / Fear of overtraining/injury)<br>
+            📍 ③ First Run Execution → 😊 Curious/Happy (Worry about losing pace / Concern about exceeding safe limits)<br>
+            📍 ④ Short-term Consistency (1-week habit building) → 😰 Tense (Difficulty maintaining daily routine / Boredom from repetitive runs)<br>
+            📍 ⑤ Long-term Habit & Community Integration → 🥳 Relieved/Excited (Fear of long-term boredom / Hesitation to join social interactions)<br>
+              🎯 <strong>RunBuddy Intervention：</strong> 🎮 Companion support + 🎁 Collection surprises + 📢 Community encouragement + 🛡️ Safe running volume reminders
           </div>
           
           <div class="requirements-list" style="margin: 1.5rem 0;">
@@ -214,14 +265,14 @@
           </div>
           <p style="margin-top: 12px;"><strong>Reasons for Selection：</strong> Directly addresses the lack of "deep narrative gamification" in literature, combines Sigma's campus advantages with Joyrun's route fun, fills the frustration caused by excessive competition, and makes running sustainable.</p>
 
-          <div class="pixel-subtitle" style="margin-top: 1rem;">Low-fi prototype · Clickable Figma (add your share link)</div>
-          <button class="btn-pixel" id="figmaPixelBtn">🎨 Expand Low-Fi Prototype Demo</button>
-          <div id="pixelMockup" style="margin-top: 1rem; background:#eadbba; border-radius: 20px; padding: 1.2rem; display: none; border: 2px solid #c99e5b;">
-            <p><strong>📱 RunBuddy Low-Fi Prototype Structure</strong><br>
-            Home Screen: Companion status + Today's mileage; Bottom Navigation: Running/Costumes/Map/Bulletin Board.<br>
-            Core Flow: Companion pops up encouragement during running, earns "Bean Coins" after finishing, exchange costumes in shop, unlock new routes.<br>
-            <span style="background:#fff0cf; display:inline-block; padding:6px; border-radius:12px;">🎧 [Simulated Interface] : 🐶 "Emily, you've jogged for 15 minutes! Collected 3 coins～ You can change the bear's hat after finishing!"</span></p>
-            <p style="font-size:0.8rem;">Paste your Figma URL in the main low-fi link above when ready.</p>
+          <div class="pixel-subtitle" style="margin-top: 1rem;">Low-fi prototype · Figma Interactive</div>
+          <div class="figma-embed-container">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FS5RmVo4XnA4YQXFcMHQC9Y%2FRunBuddy-Low-Fi-Prototype%3Fnode-id%3D0-1%26t%3DKqrKdzoC3atfzUBZ-1" allowfullscreen></iframe>
+          </div>
+          <div style="text-align: center; margin-top: 1rem;">
+            <a href="https://www.figma.com/design/S5RmVo4XnA4YQXFcMHQC9Y/RunBuddy-Low-Fi-Prototype?node-id=0-1&t=KqrKdzoC3atfzUBZ-1" target="_blank" rel="noopener" class="btn-pixel">
+              🎨 Open in Figma (Full Screen)
+            </a>
           </div>
         </section>
 

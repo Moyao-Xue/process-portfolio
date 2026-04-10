@@ -173,6 +173,45 @@ const portfolioInterval = setInterval(() => {
 }, 300);
 
 // =========================================
+// 左侧滚动进度条功能
+// =========================================
+function initScrollProgress() {
+  const progressBar = document.getElementById('scrollProgressBar');
+  const progressFill = document.getElementById('scrollProgressFill');
+  const progressTooltip = document.getElementById('scrollProgressTooltip');
+
+  if (!progressBar || !progressFill || !progressTooltip) return;
+
+  function updateProgress() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    
+    progressFill.style.height = `${Math.min(progress, 100)}%`;
+    progressTooltip.textContent = `${Math.round(progress)}%`;
+  }
+
+  // 监听滚动事件
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  
+  // 初始化
+  updateProgress();
+
+  // 点击进度条跳转到对应位置
+  progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const clickPosition = e.clientY - rect.top;
+    const percentage = clickPosition / rect.height;
+    const targetScroll = percentage * (document.documentElement.scrollHeight - window.innerHeight);
+    
+    window.scrollTo({
+      top: targetScroll,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// =========================================
 // 把新功能加到启动列表
 // =========================================
 window.onload = function () {
@@ -181,4 +220,5 @@ window.onload = function () {
   setInterval(updateTime, 60000);
   initAutoExit();
   initClouds();
+  initScrollProgress();
 };
