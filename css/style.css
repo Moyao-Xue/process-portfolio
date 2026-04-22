@@ -943,14 +943,10 @@ header {
   box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
 }
 
-/* 架构图占位 */
-.arch-placeholder {
-  background: #f3e8c8;
-  border: 2px dashed #d4a373;
-  padding: 30px;
-  text-align: center;
-  border-radius: 12px;
+/* 架构图 */
+.arch-img-wrapper {
   margin: 16px 0;
+  text-align: center;
 }
 
 /* 表格 */
