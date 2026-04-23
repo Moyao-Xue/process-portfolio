@@ -1,4 +1,4 @@
-# RunBuddy Official Promotion Website README
+# RunBuddy Process-Portfolio Website
 ## Project Overview
 This document describes the Process-Portfolio website of **RunBuddy**, a gamified companion running application.
 The website serves as the official external display platform, fully presenting core features, product highlights and brand concepts of RunBuddy. It aims to help beginner runners develop long-term exercise habits through gamification, character raising, professional running guidance and interactive community. You can access our static web page by [RunBuddy-Process-Portfolio](https://adam-aiaiai.github.io/process-portfolio/)
@@ -38,6 +38,7 @@ RunBuddy-Promotion-Web/
 ## More Details
 For comprehensive system functions and project information, please visit our official project website:
 > [RunBuddy github repository](https://github.com/Moyao-Xue/RunBuddy)
+
 > [RunBuddy Live Demo](https://moyao-xue.github.io/RunBuddy/)
 
 ## License
