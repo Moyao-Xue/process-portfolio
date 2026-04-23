@@ -45,7 +45,18 @@ function initAutoExit() {
 
   let isExiting = false;
 
+  // 桌面端：鼠标悬停触发
   ticket.addEventListener("mouseenter", () => {
+    triggerExit();
+  });
+
+  // 移动端：触摸触发
+  ticket.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    triggerExit();
+  });
+
+  function triggerExit() {
     if (isExiting) return;
     isExiting = true;
 
@@ -67,7 +78,7 @@ function initAutoExit() {
       }, 1000);
 
     }, 600);
-  });
+  }
 }
 function initClouds() {
   const scene = document.querySelector('.sky');
