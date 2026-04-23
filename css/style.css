@@ -1,41 +1,87 @@
+@font-face {
+  font-family: 'ZQK';
+  src: url('../fonts/ZQK_Scribbled.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* ========================【新增】加载页样式 ======================== */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(249, 229, 142); /* 和门票背景同色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999; /* 最顶层 */
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+/* 加载完成隐藏 */
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+/* 你的动图尺寸，可自己改 */
+.loading-gif {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+.loading-text {
+  font-size: 20px;
+  font-family: "ZQK", serif;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+}
+/* ======================== 【/新增】加载页样式 ======================== */
+
+/* 你原来的所有 CSS 从这里开始往下不变 */
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Manrope:wght@400;500;700&display=swap");
 
 @font-face {
-  font-family: 'kids'; /* 自己起名 */
+  font-family: 'kids';
   src: url('../fonts/ButterflyKids-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'finger'; /* 自己起名 */
+  font-family: 'finger';
   src: url('../fonts/FingerPaint-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'inter'; /* 自己起名 */
+  font-family: 'inter';
   src: url('../fonts/Interlope-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'medieval'; /* 自己起名 */
+  font-family: 'medieval';
   src: url('../fonts/MedievalSharp.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'waterfall'; /* 自己起名 */
+  font-family: 'waterfall';
   src: url('../fonts/Waterfall-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'ZQK'; /* 自己起名 */
+  font-family: 'ZQK';
   src: url('../fonts/ZQK_Scribbled.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -79,48 +125,43 @@ body {
   pointer-events: none;
 }
 
-/* =========================================
-   门票容器（层级最高，保证盖住天空）
-   ========================================= */
-.exhibition-wrapper {
-  position: relative;
-  z-index: 9999; /* 门票永远在天空上面 */
-}
-
 /* ========= 门票指向提示（第一个场景专用） ========= */
 .ticket-guide {
   position: absolute;
-  top: -120px; /* 距离门票的距离 */
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  z-index: 9999; /* 最上层 */
-  pointer-events: none; /* 不影响点击票 */
+  z-index: 99999999;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 .ticket-guide p {
-  font-size: 22px;
+  font-size: 24px;
   font-family: "Cinzel", serif;
   color: #ffffff;
   font-weight: bold;
   margin-bottom: 12px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 /* 白色向下箭头 */
 .arrow-down {
   width: 0;
   height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-top: 35px solid #ffffff;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-top: 38px solid #ffffff;
   margin: 0 auto;
   animation: bounce 1.2s infinite ease-in-out;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));
 }
 
-/* 箭头跳动动画（更显眼） */
+/* 箭头跳动动画 */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+  50%  { transform: translateY(12px); }
 }
 
 /* =========================================
@@ -264,7 +305,7 @@ body {
 }
 
 /* =========================================
-   The Holographic Star Seal 
+   The Holographic Star Seal
    ========================================= */
 .foil-seal {
   min-width: 48px;
@@ -361,6 +402,10 @@ body.fade-to-dark {
   z-index: 1;
 }
 
+.sky {
+  transition: opacity 1.2s ease; /* 加这一行 */
+}
+
 .sky.show {
   opacity: 1;
   visibility: visible;
@@ -446,7 +491,7 @@ label, p, a, select, input, textarea, span, legend {
 a { text-decoration: none; }
 .input-style {
     width: 100%;
-    padding: 5px; 
+    padding: 5px;
     background-color: #FEFBCC;
     border: 3px outset #D57A05;
     border-radius: 5px;
@@ -513,16 +558,7 @@ header {
     height: 110vh;
     min-height: 760px;
 }
-/* .hero-bg {
-    z-index: -1;
-    position: absolute;
-    background-image: url("../image/backgroud_improve.png");
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100vh;
-    min-height: 700px;
-} */
+
 .hero-bg {
   z-index: -10 !important;
   position: absolute;
@@ -532,12 +568,28 @@ header {
   height: 100vh;
   min-height: 700px;
   overflow: hidden;
+
+  /* ========== 静态背景配置 ========== */
+  background-image: url("../image/sky2.png"); /* 换成你静态图路径 */
+  background-size: cover;       /* 铺满全屏 */
+  background-position: center;  /* 居中 */
+  background-repeat: no-repeat; /* 不重复平铺 */
 }
+/* .hero-bg {
+  z-index: -10 !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+} */
 
 /* ------------------------------
    核心：两张图叠在一起，同步滚动
 ------------------------------ */
-.hero-bg::before,
+/* .hero-bg::before,
 .hero-bg::after {
   content: "";
   position: absolute;
@@ -547,65 +599,48 @@ header {
   height: 100%;
   background-size: auto 100%;
   background-repeat: repeat-x;
-  /* 关键：超长距离单向滚动，永不复位 = 永不跳帧 */
   animation: bgScroll 90s linear infinite;
 }
 
 /* 图 1 */
-.hero-bg::before {
+/* .hero-bg::before {
   background-image: url("../image/background_ani_1.png");
   animation: bgScroll 300s linear infinite, flash1 0.5s step-end infinite;
-}
+} */
 
 /* 图 2 */
-.hero-bg::after {
-  background-image: url("../image/background_ani_2.png"); /* 改你的图2 */
+/* .hero-bg::after {
+  background-image: url("../image/background_ani_2.png");
   animation: bgScroll 300s linear infinite, flash2 0.5s step-end infinite;
-}
+} */
 
-/* ------------------------------
-   ✅ 真正不跳帧的核心：
-   只往一个方向滚，不回头、不复原
-   超长距离，肉眼一辈子看不到尽头
------------------------------- */
-@keyframes bgScroll {
+/* @keyframes bgScroll {
   0% { background-position: 0 center; }
-  100% { background-position: -20000px center; } /* 超大距离！ */
-}
+  100% { background-position: -20000px center; }
+} */
 
-/* ------------------------------
-   闪烁切换（硬切，无渐变，不漏底）
------------------------------- */
-@keyframes flash1 {
+/* @keyframes flash1 {
   0%, 50%  { opacity: 1; }
   50.1%, 100% { opacity: 0; }
-}
-@keyframes flash2 {
+} */
+/* @keyframes flash2 {
   0%, 50%  { opacity: 0; }
   50.1%, 100% { opacity: 1; }
-}
-/* #hero .title {
-  font-family: "Cinzel", serif;
-  font-size: 2.8rem;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: -1px;
-  margin: 0 auto;
-} */
+}  */
+
 #hero .hero-img {
     position: absolute;
     z-index: 2;
-    bottom: 0;
+    bottom: 130px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100% !important;       /* 全屏宽 */
-    height: auto !important;      /* 高度自动等比例 */
-    max-height: 100% !important; /* 允许图片占满容器高度 */
-    object-fit: contain !important; /* 完整显示图片，不裁剪 */
+    width: 100% !important;
+    height: auto !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
     object-position: center bottom !important;
 }
 
-/* 空模块保留结构 */
 #locations, #villagers, #map, .border, #contact {
   background: #eddbad;
   position: relative;
@@ -632,23 +667,6 @@ header {
     }
 }
 
-/* .custom-title {
-    position: absolute;
-    top: 28vh !important;
-    left: 0 !important;
-    right: 0 !important;
-    text-align: center !important;
-    color: #ffffff !important;       
-    text-shadow: 0 4px 6px rgba(0,0,0,0.4) !important;
-    z-index: 2 !important;
-    font-family: "Cinzel", serif !important;
-    font-size: 2.8rem !important;
-    line-height: 1 !important;
-    font-weight: 700 !important;
-    letter-spacing: -1px !important;
-    margin: 0 auto !important;
-} */
-
 .page-title {
   position: absolute !important;
   top: 50% !important;
@@ -656,12 +674,12 @@ header {
   width: 100% !important;
   transform: translate(-50%, -50%) !important;
 
-  text-align: center !important; 
+  text-align: center !important;
   font-size: 200px !important;
   font-family: "ZQK", serif !important;
   font-weight: 900 !important;
   color: #FFFFFF !important;
-  text-shadow: 
+  text-shadow:
     2px 2px 0 #333333,
    -2px 2px 0 #333333,
     2px -2px 0 #333333,
@@ -670,12 +688,7 @@ header {
   pointer-events: none !important;
 }
 
-/* 标题 + GIF 并排 */
-
 /* ========== PORTFOLIO CONTENT - PIXEL STYLE ========== */
-/* ============================== */
-/* PORTFOLIO PIXEL 完整样式  */
-/* ============================== */
 .portfolio-pixel {
   max-width: 1000px;
   margin: 120px auto 60px;
@@ -988,10 +1001,6 @@ header {
   border-top: 2px solid #d4a373;
 }
 
-/* ============================== */
-/* ✅ 修复三个问题 */
-/* ============================== */
-
 /* 1. 修复门票居中 */
 .exhibition-wrapper {
   width: 100vw;
@@ -1002,18 +1011,19 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+
+  overflow: visible !important;
 }
 
 /* 2. 修复最后场景：恢复纯色背景，关闭动画背景 */
-/* 只修复：让动画背景显示在最上层底部，不被纯色盖住 */
 .bg-mask {
   position: absolute;
-  top: 80vh;       /* 从 road.png 下面开始 */
+  top: 85vh;
   left: 0;
   width: 100vw;
-  height: 840vh;   /* 足够长 */
-  background: #eddbad;
-  z-index: 0;      /* 👈 关键：背景之上，内容之下 */
+  height: 1125vh;
+  background: rgb(255,241,210);
+  z-index: 0;
   pointer-events: none;
 }
 /* 3. 底部 footer 只在最后场景显示，不会跑到第一页 */
@@ -1023,13 +1033,12 @@ header {
 }
 
 .last_title {
-
-  text-align: left !important;  /* 文字左对齐 */
+  text-align: left !important;
   font-size: 100px !important;
   font-family: "ZQK", serif !important;
   font-weight: 900 !important;
   color: #FFFFFF !important;
-  text-shadow: 
+  text-shadow:
     1px 1px 0 #333333,
    -1px 1px 0 #333333,
     1px -1px 0 #333333,
@@ -1093,11 +1102,11 @@ header {
   .scroll-progress-bar {
     width: 4px;
   }
-  
+
   .scroll-progress-bar:hover {
     width: 8px;
   }
-  
+
   .scroll-progress-tooltip {
     display: none;
   }

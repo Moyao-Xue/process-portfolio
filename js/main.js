@@ -17,7 +17,26 @@ function updateTime() {
   document.getElementById("today-time").textContent = `${hours}:${minutes}`;
 }
 
-// ✅ 核心：票裂开 → 退场 → 显示天空云朵
+// ========================【新增】Loading 点动画 ========================
+function startLoadingDots() {
+  const text = document.getElementById("loadingText");
+  let dots = 0;
+  setInterval(() => {
+    dots = (dots + 1) % 4; // 0→1→2→3→0 循环
+    text.textContent = "Loading" + ".".repeat(dots);
+  }, 300); // 每300ms加一个点
+}
+startLoadingDots();
+
+// ========================【新增】页面加载完隐藏加载页，显示门票 ========================
+function hideLoadingScreen() {
+  const loading = document.getElementById("loadingScreen");
+  setTimeout(() => {
+    loading.classList.add("hidden");
+  }, 800); // 可自己改加载时间
+}
+// ======================== 【/新增】Loading 功能 ========================
+
 // ✅ 核心：票裂开 → 退场 → 显示天空 → 8秒后向上淡出 → 显示渐变背景
 function initAutoExit() {
   const ticket = document.getElementById("ticket");
@@ -54,10 +73,8 @@ function initClouds() {
   const scene = document.querySelector('.sky');
   if (!scene) return;
 
-  // 👇 这里改成 6～8 就会变少，你可以自己调
   const numClouds = 6;
 
-  // 👇 像素风云朵 SVG（超可爱 8bit 风格）
   const cloudTemplate = `
   <div class="cloud">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 64" shape-rendering="crispEdges">
@@ -71,12 +88,10 @@ function initClouds() {
     </svg>
   </div>`;
 
-  // 生成云朵
   for (let i = 0; i < numClouds; i++) {
     scene.innerHTML += cloudTemplate;
   }
 
-  // 给每个云朵设置随机大小、速度、位置
   const clouds = document.querySelectorAll('.cloud');
   clouds.forEach(cloud => {
     const size = (Math.random() * 50 + 50) / 100;
@@ -96,7 +111,6 @@ function initClouds() {
   });
 }
 
-// 云朵飘动动画
 const style = document.createElement('style');
 style.textContent = `
 @keyframes cloudMove {
@@ -117,26 +131,22 @@ function initStardewUI() {
 
   if (!form || !toggleDropdown || !dropdown) return;
 
-  // 表单提交
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     alert("Your question has been submitted");
   });
 
-  // 菜单切换
   function checkState() {
     dropdown.classList.toggle("closed");
   }
 
   toggleDropdown.addEventListener('click', checkState);
 
-  // 点击菜单关闭下拉框
   dropdownItems.forEach((item) => {
     item.addEventListener('click', checkState);
   });
 }
 
-// 等待场景显示后再初始化
 const waitForScene = setInterval(() => {
   if (document.querySelector(".final-scene.show")) {
     initStardewUI();
@@ -163,7 +173,6 @@ function initPortfolioPixel() {
   });
 }
 
-// 等待 final-scene 显示后启动
 const portfolioInterval = setInterval(() => {
   const final = document.querySelector('.final-scene.show');
   if (final) {
@@ -191,13 +200,9 @@ function initScrollProgress() {
     progressTooltip.textContent = `${Math.round(progress)}%`;
   }
 
-  // 监听滚动事件
   window.addEventListener('scroll', updateProgress, { passive: true });
-  
-  // 初始化
   updateProgress();
 
-  // 点击进度条跳转到对应位置
   progressBar.addEventListener('click', (e) => {
     const rect = progressBar.getBoundingClientRect();
     const clickPosition = e.clientY - rect.top;
@@ -212,9 +217,11 @@ function initScrollProgress() {
 }
 
 // =========================================
-// 把新功能加到启动列表
+// 启动：加载动画 + 页面加载完成隐藏
 // =========================================
-window.onload = function () {
+window.onload = function () {   // 【新增】启动 Loading 点
+  hideLoadingScreen();   // 【新增】加载完隐藏加载页
+
   updateDate();
   updateTime();
   setInterval(updateTime, 60000);
