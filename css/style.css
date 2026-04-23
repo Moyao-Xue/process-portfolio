@@ -964,8 +964,24 @@ header {
 .arch-img-wrapper {
   margin: 16px 0;
   text-align: center;
+  
 }
 
+/* 架构图图片样式：你可以自由改大小 */
+.arch-img {
+  max-width: 100%;
+  width: 50%;      /* 👈 你想改多大就改这里 */
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid #d4a373;
+  cursor: pointer;   /* 鼠标放上去变小手 */
+  transition: transform 0.2s;
+}
+
+/*  hover 轻微放大 */
+.arch-img:hover {
+  transform: scale(1.02);
+}
 /* 表格 */
 .contrib-table {
   width: 100%;
@@ -1025,7 +1041,7 @@ header {
   top: 85vh;
   left: 0;
   width: 100vw;
-  height: 1125vh;
+  height: 1225vh;
   background: rgb(255,241,210);
   z-index: 0;
   pointer-events: none;
@@ -1049,6 +1065,7 @@ header {
    -1px -1px 0 #333333;
   z-index: 99999999 !important;
   pointer-events: none !important;
+  text-transform: none !important;
 }
 
 /* ============================== */
@@ -1343,7 +1360,9 @@ header {
   
   /* 背景遮罩 */
   .bg-mask {
-    display: none;
+    display: block !important;
+    top: 90vh;     /* 手机端起始位置 */
+    height: 1590vh;
   }
 }
 

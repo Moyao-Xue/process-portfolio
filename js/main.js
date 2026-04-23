@@ -227,6 +227,40 @@ function initScrollProgress() {
   });
 }
 
+// 点击图片放大
+function openZoom(img) {
+  let zoomDiv = document.createElement("div");
+  zoomDiv.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  `;
+
+  let zoomImg = document.createElement("img");
+  zoomImg.src = img.src;
+  zoomImg.style.cssText = `
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    border: 3px solid #d4a373;
+  `;
+
+  zoomDiv.appendChild(zoomImg);
+  document.body.appendChild(zoomDiv);
+
+  zoomDiv.onclick = () => {
+    document.body.removeChild(zoomDiv);
+  };
+}
+
 // =========================================
 // 启动：加载动画 + 页面加载完成隐藏
 // =========================================
